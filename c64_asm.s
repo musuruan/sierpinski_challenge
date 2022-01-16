@@ -24,9 +24,6 @@ MAXPOINTS = 10000
 COLOR =$0400
 SCREEN = $2000
 
-; Kernel routines
-SCRCLR = $E544
-
 Start:
 	; Imposta il colore di sfondo a WHITE
 	;LoadB VIC_BG_COLOR0, 1
@@ -110,15 +107,8 @@ next:
 	CmpWI COUNT, MAXPOINTS
 	bne next
 	
-	; Disabilita Hires
-	rmbf 5, VIC_CTRL1
-	rmbf 3, VIC_VIDEO_ADR
-	
-	; Pulisce lo schermo
-	jsr SCRCLR
-	
-	; Ritorna al BASIC
-	rts
+@endless:
+	bra @endless
 	
 	; Stampa il punto XC, YC sulla grafica bitmap
 	; Adattato da
