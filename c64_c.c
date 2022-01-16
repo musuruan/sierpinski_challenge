@@ -7,7 +7,7 @@
 #include <tgi.h>
 #include <cc65.h>
 
-#define MAXPOINTS 3000
+#define MAXPOINTS 10000
 
 void main(void) {
     static const unsigned char palette[2] = {TGI_COLOR_WHITE, TGI_COLOR_BLACK}; 

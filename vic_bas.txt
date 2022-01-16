@@ -2,7 +2,7 @@
 1 t=ti
 2 graphic2:scnclr
 3 x=rnd(-ti):x=512:y=.
-4 forn=1to3000
+4 forn=1to10000
 5 onint(rnd(1)*3)+1goto6,7,8
 6 x=(x+512)/2:y=y/2:point1,x,y:goto9
 7 x=x/2:y=(y+1024)/2:point1,x,y:goto9
