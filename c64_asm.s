@@ -99,8 +99,8 @@ Start:
 	LoadW COUNT, 0
 	
 next:	
-	ldy $D41B	; Carica un numero casuale
-	lda modulo,y	; Calcola il modulo 3 del numero casuale
+	ldy $D41B		; Carica un numero casuale
+	lda tbl_modulo,y	; Calcola il modulo 3 del numero casuale
 	
 	cmp #$02	; A seconda del valore, calcola il nuovo vertice
 	beq @2
@@ -149,7 +149,7 @@ Plot:
 	;calc X-cell, divide by 8
 	;divide 2-byte pointX / 8
 	;------------------------
-	lda XC+1
+	lda XC+1	;max(XC)=319=0x013F
 	lsr		;rotate the high byte into carry flag
 	lda XC
 	ror		;lo byte / 2 (rotate C into low byte)
@@ -163,8 +163,8 @@ Plot:
 	clc
 	
 	lda tbl_vbaseLo,y	;table of SCREEN row base addresses
-	adc tbl_8Lo,x	;+ (8 * Xcell)
-	sta cell	;= cell address
+	adc tbl_8Lo,x		;+ (8 * Xcell)
+	sta cell		;= cell address
 
 	lda tbl_vbaseHi,y	;do the high byte
 	adc tbl_8Hi,x
@@ -191,7 +191,7 @@ Plot:
 	rts
 
 ; Lookup table per fare il modulo 3 di un numero a 8 bit
-modulo:	
+tbl_modulo:
 	.byte 0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0
 	.byte 1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1
 	.byte 2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2
