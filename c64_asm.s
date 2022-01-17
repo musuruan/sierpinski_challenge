@@ -35,22 +35,43 @@ Start:
 	smbf 5, VIC_CTRL1
 	
 	; Pulisce la grafica Hires
-	; COMPUTE! # 61 page 87
-	; https://archive.org/details/1985-06-compute-magazine/page/n87/mode/2up
-	LoadW cell, SCREEN
-	ldx #$1E
-@l2:	ldy #$00
 	lda #$00
-@l1:	sta (cell),y
-	dey
+	ldx #$00
+@l1:
+	sta SCREEN,x
+	sta SCREEN+$0100,x
+	sta SCREEN+$0200,x
+	sta SCREEN+$0300,x
+	sta SCREEN+$0400,x
+	sta SCREEN+$0500,x
+	sta SCREEN+$0600,x
+	sta SCREEN+$0700,x
+	sta SCREEN+$0800,x
+	sta SCREEN+$0900,x
+	sta SCREEN+$0A00,x
+	sta SCREEN+$0B00,x
+	sta SCREEN+$0C00,x
+	sta SCREEN+$0D00,x
+	sta SCREEN+$0E00,x
+	sta SCREEN+$0F00,x
+	sta SCREEN+$1000,x
+	sta SCREEN+$1100,x
+	sta SCREEN+$1200,x
+	sta SCREEN+$1300,x
+	sta SCREEN+$1400,x
+	sta SCREEN+$1500,x
+	sta SCREEN+$1600,x
+	sta SCREEN+$1700,x
+	sta SCREEN+$1800,x
+	sta SCREEN+$1900,x
+	sta SCREEN+$1A00,x
+	sta SCREEN+$1B00,x
+	sta SCREEN+$1C00,x
+	sta SCREEN+$1D00,x
+	sta SCREEN+$1E00,x
+	sta SCREEN+$1F00,x
+	inx
 	bne @l1
-	inc cell+1
-	dex
-	bpl @l2
-	ldy #$40
-@l3:	sta (cell),y
-	dey
-	bpl @l3
 	
 	; Imposta i colori
 	lda #$01
@@ -108,7 +129,7 @@ next:
 	bne next
 	
 @endless:
-	bra @endless
+	jmp @endless
 	
 	; Stampa il punto XC, YC sulla grafica bitmap
 	; Adattato da
