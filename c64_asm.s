@@ -249,13 +249,3 @@ tbl_orbit:
 	.byte %00000010
 	.byte %00000001
 
-tbl_andbit:
-	.byte %01111111
-	.byte %10111111
-	.byte %11011111
-	.byte %11101111
-	.byte %11110111
-	.byte %11111011
-	.byte %11111101
-	.byte %11111110
-
