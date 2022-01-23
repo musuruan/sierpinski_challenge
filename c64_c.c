@@ -43,7 +43,7 @@ void main(void) {
     tgi_setpalette(palette); 
     tgi_setcolor(TGI_COLOR_WHITE);
     
-    /* Plot 3000 points */
+    /* Plot points */
 
     for (count=0; count<MAXPOINTS; count++) {
         switch(rand() % 3) {
