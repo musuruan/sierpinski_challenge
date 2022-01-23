@@ -6,8 +6,18 @@
 #include <conio.h>
 #include <tgi.h>
 #include <cc65.h>
+#include <peekpoke.h>
 
 #define MAXPOINTS 10000
+
+void randomize(void) {
+    POKEW(0xd40e,0xffff);
+    POKE(0xd412,0x80);
+}
+
+int rnd(void) {
+    return PEEK(0xd41b);
+}
 
 void main(void) {
     static const unsigned char palette[2] = {TGI_COLOR_WHITE, TGI_COLOR_BLACK}; 
@@ -21,7 +31,7 @@ void main(void) {
     /* Get clock */
     t = clock();
 
-    _randomize();
+    randomize();
 
     /* Install the graphics driver */
     tgi_install(tgi_static_stddrv);
@@ -46,7 +56,7 @@ void main(void) {
     /* Plot points */
 
     for (count=0; count<MAXPOINTS; count++) {
-        switch(rand() % 3) {
+        switch(rnd() % 3) {
             case 0:
                 x = (x+160)>>1;
                 y = y>>1;
