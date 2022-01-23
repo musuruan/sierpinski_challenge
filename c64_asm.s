@@ -69,7 +69,7 @@ Start:
 	sta SCREEN+$1C00,x
 	sta SCREEN+$1D00,x
 	sta SCREEN+$1E00,x
-	sta SCREEN+$1F00,x
+	sta SCREEN+$1E40,x
 	inx
 	bne @l1
 	
