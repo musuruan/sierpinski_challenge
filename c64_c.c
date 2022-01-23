@@ -15,7 +15,7 @@ void randomize(void) {
     POKE(0xd412,0x80);
 }
 
-int rnd(void) {
+unsigned short rnd(void) {
     return PEEK(0xd41b);
 }
 
