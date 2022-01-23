@@ -55,7 +55,7 @@ void main(void) {
     
     /* Plot points */
 
-    for (count=0; count<MAXPOINTS; count++) {
+    for (count=MAXPOINTS; count--; ) {
         switch(rnd() % 3) {
             case 0:
                 x = (x+160)>>1;
@@ -91,7 +91,7 @@ void main(void) {
     sec = t / CLOCKS_PER_SEC;
     
     printf("elapsed time = %lu sec\n\n", sec);
-    printf("number of plotted points = %u\n", count);
+    printf("number of plotted points = %u\n", MAXPOINTS);
     
 }
 
