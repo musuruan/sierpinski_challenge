@@ -96,7 +96,7 @@ Start:
 	; Inzializzazione variabili
 	LoadW XC, 160
 	LoadB YC, 0
-	LoadW COUNT, 0
+	LoadW COUNT, MAXPOINTS-1
 	
 next:	
 	ldy $D41B		; Carica un numero casuale
@@ -124,9 +124,14 @@ next:
 	
 @plot:  jsr Plot
 
-	IncW COUNT
-	CmpWI COUNT, MAXPOINTS
-	bne next
+	lda COUNT
+	bne @nz
+	lda COUNT+1
+	beq @endless	; salta quando COUNT=$0000 (COUNT non viene decrementato in questo caso)
+	dec COUNT+1
+@nz:
+	dec COUNT
+	bra next
 	
 @endless:
 	jmp @endless

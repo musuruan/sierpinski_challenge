@@ -41,6 +41,6 @@ Mi sono cimentato anche in una **versione in assembly**. Erano 25 anni che non s
 
 Per praticità, visto che ci sono alcune operazioni a 16 bit, ho usato le [macro di geoProgrammer](https://thornton2.com/programming/geos/geoprogrammer-macros.html).
 
-Con 10k iterazioni, il programma impega 1810376 cicli (1810376/985248 = 1.83 sec) per disegnare 10 mila punti. Sicuramente manca qualche ottimizzazione, ma non arriverò mai ai 898000 cicli (0.91 secondi) di Antonio Savona. Attendo con impazienza di vedere il suo codice 🙂
+Con 10k iterazioni, il programma impega 1778371 cicli (1778371/985248 = 1.80 sec) per disegnare 10 mila punti. Sicuramente manca qualche ottimizzazione, ma non arriverò mai ai 898000 cicli (0.91 secondi) di Antonio Savona. Attendo con impazienza di vedere il suo codice 🙂
 
 
