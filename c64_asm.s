@@ -100,7 +100,7 @@ Start:
 	
 next:	
 	ldy $D41B		; Carica un numero casuale
-	lda tbl_modulo,y	; Calcola il modulo 3 del numero casuale
+	lda tbl_modulo3,y	; Calcola il modulo 3 del numero casuale
 	
 	cmp #$02	; A seconda del valore, calcola il nuovo vertice
 	beq @2
@@ -191,7 +191,7 @@ Plot:
 	rts
 
 ; Lookup table per fare il modulo 3 di un numero a 8 bit
-tbl_modulo:
+tbl_modulo3:
 	.byte 0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0
 	.byte 1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1
 	.byte 2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2
