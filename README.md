@@ -35,7 +35,7 @@ Ho usato un ciclo FOR invece della simulazione del ciclo REPEAT/UNTIL che c'era 
 
 E' meglio inoltre avere nomi brevi per le variabili, quindi di un carattere al massimo e ho usato variabili al posto delle costanti (le costanti sono più lente perché i valori devono essere parsificati ogni volta).
 
-Ho fatto anche una **versione in C** con cc65 che gira su C64. Impiega 14 secondi per 10000 punti. Per generare i numeri casuali uso il SID invece delle routine di libreria, ottenendo un lieve incremento prestazionale.
+Ho fatto anche una **versione in C** con cc65 che gira su C64. Impiega 14 secondi per 10000 punti. Per [generare i numeri casuali](https://archive.org/details/1986-05-compute-magazine/page/n77/mode/2up) uso il SID invece delle routine di libreria, ottenendo un lieve incremento prestazionale.
 
 Mi sono cimentato anche in una **versione in assembly**. Erano 25 anni che non scrivevo niente per il 6502. Non è stato semplice, ma man mano riaffioravano vecchi ricordi. 
 
