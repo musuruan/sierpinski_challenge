@@ -35,11 +35,11 @@ Ho usato un ciclo FOR invece della simulazione del ciclo REPEAT/UNTIL che c'era 
 
 E' meglio inoltre avere nomi brevi per le variabili, quindi di un carattere al massimo e ho usato variabili al posto delle costanti (le costanti sono più lente perché i valori devono essere parsificati ogni volta).
 
-Ho fatto anche una **versione in C** con cc65 che gira su C64. Impiega 14 secondi per 10000 punti. Per [generare i numeri casuali](https://archive.org/details/1986-05-compute-magazine/page/n77/mode/2up) uso il SID invece delle routine di libreria, ottenendo un lieve incremento prestazionale.
+Ho fatto anche una **versione in C** con cc65 che gira su C64. Impiega 9 secondi per 10000 punti. Per [generare i numeri casuali](https://archive.org/details/1986-05-compute-magazine/page/n77/mode/2up) uso il SID invece delle routine di libreria, ottenendo un lieve incremento prestazionale. Inoltre, invece di usare la funzione modulo, che è molto dispendiosa, uso una tabella precalcolata per fare il modulo3 del numero casuale generato dal SID.
 
 Mi sono cimentato anche in una **versione in assembly**. Erano 25 anni che non scrivevo niente per il 6502. Non è stato semplice, ma man mano riaffioravano vecchi ricordi. 
 
-Per praticità, visto che ci sono alcune operazioni a 16 bit, ho usato le [macro di geoProgrammer](https://thornton2.com/programming/geos/geoprogrammer-macros.html).
+Per praticità, visto che ci sono alcune operazioni a 16 bit, ho usato le [macro di geoProgrammer](https://thornton2.com/programming/geos/geoprogrammer-macros.html). Anche in questo caso uso una tabella per effettuare il modulo3 del numero casuale.
 
 Con 10k iterazioni, il programma impega 1778371 cicli (1778371/985248 = 1.80 sec) per disegnare 10 mila punti. Sicuramente manca qualche ottimizzazione, ma non arriverò mai ai 898000 cicli (0.91 secondi) di Antonio Savona. Attendo con impazienza di vedere il suo codice 🙂
 
