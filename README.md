@@ -25,7 +25,7 @@ Per ottimizzare in velocità mi sono basato sullo studio [Writing fast Commodore
 
 Il Basic Commodore non ha una gestione dell'aritmetica dei numeri interi e questi sono convertiti in float per fare le operazioni e il risultato è nuovamente convertito in un numero intero. Quindi nienti interi ma solo numeri in virgola mobile.
 
-Ho minimizzato il numero di righe, cercando di mettere più stantement sulla stessa riga. Il Basic infatti impiega più tempo a passare alla riga successiva che a interpretare il separatore ":". 
+Ho minimizzato il numero di righe, cercando di mettere più statement sulla stessa riga. Il Basic infatti impiega più tempo a passare alla riga successiva che a interpretare il separatore ":". 
 
 Ho evitato tutti gli spazi negli statement e non ho messo commenti REM perché avrebbero solo rallentato inutilmente il programma.
 
