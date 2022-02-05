@@ -21,7 +21,7 @@ COUNT = FREKZP+3
 MAXPOINTS = 10000
 
 ; Hires pointers
-COLOR =$0400
+COLOR = $0400
 SCREEN = $2000
 
 Start:
